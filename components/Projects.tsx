@@ -20,7 +20,8 @@ const projects: Project[] = [
     description:
       'A mobile-first progressive web app for tracking workouts, body metrics, and fitness progress. Features offline support, installable on any device, workout logging across multiple categories (cardio, strength, body metrics), progress charts powered by Chart.js, and a calendar view of training history.',
     tags: ['JavaScript', 'HTML', 'CSS', 'Chart.js', 'PWA', 'Service Worker', 'Netlify'],
-    codeUrl: 'https://github.com/teel23/fitness-tracker',  // 👈 replace with your repo URL
+    demoUrl: 'https://fittrack.c2tbuilds.com',
+    codeUrl: 'https://github.com/teel23/fitness-tracker',
   },
   {
     title: 'DevLink Dashboard',
@@ -113,7 +114,7 @@ export default function Projects() {
               {project.description}
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-6">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
@@ -123,6 +124,18 @@ export default function Projects() {
                 </span>
               ))}
             </div>
+
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 self-start px-5 py-2.5 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-lg transition-colors duration-200 group/btn"
+              >
+                <ExternalLink size={15} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" />
+                Launch App
+              </a>
+            )}
           </div>
         ))}
 
