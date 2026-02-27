@@ -28,7 +28,7 @@ const projects: Project[] = [
     screenshotLabels: ['Home', '501 Game', 'Tic Tac Toe'],
     description:
       'A mobile-first darts scoreboard PWA supporting four game modes: 01 Games (301/501/701), Cricket, Tic Tac Toe Darts, and Bermuda Triangle (Halve-It). Features per-player dart tracking, undo history, auto-advance after 3 darts, a live dartboard display, and installable on any device.',
-    tags: ['React', 'JavaScript', 'CSS', 'PWA', 'Netlify'],
+    tags: ['React', 'JavaScript', 'CSS', 'PWA', 'Vercel'],
     demoUrl: 'https://darts.c2tbuilds.com',
   },
   {
@@ -38,7 +38,7 @@ const projects: Project[] = [
     screenshotLabels: ['AI Recommender'],
     description:
       'A cinematic AI-powered movie & TV chat app. Tell it your mood or a film you loved — it responds like a film-obsessed friend, with picks rendered as sleek streaming cards. Built with the Claude API on the backend for real-time streaming recommendations.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Claude API', 'Streaming', 'Netlify'],
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Claude API', 'Streaming', 'Vercel'],
     demoUrl: 'https://ai-mov.c2tbuilds.com',
     beta: true,
   },
@@ -52,7 +52,7 @@ const projects: Project[] = [
     screenshotLabels: ['Dashboard', 'Scoring'],
     description:
       'An offline-first golf scoring PWA with Augusta-inspired design. Manage courses with full 18-hole par data, track strokes hole-by-hole with quick preset buttons (Eagle through Double Bogey), view running totals vs par, and review complete round history with front/back 9 breakdowns — all stored locally on your device.',
-    tags: ['React', 'Vite', 'Tailwind CSS', 'Dexie.js', 'PWA', 'Netlify'],
+    tags: ['React', 'Vite', 'Tailwind CSS', 'Dexie.js', 'PWA', 'Vercel'],
     demoUrl: 'https://golf.c2tbuilds.com',
     beta: true,
   },
