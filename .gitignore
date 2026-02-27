@@ -31,6 +31,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# netlify build artifacts
+.netlify/
+
 # stray folders
 C2T/
 Website/
