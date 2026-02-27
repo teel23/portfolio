@@ -1,0 +1,21 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[327],{8294:function(e,t,r){Promise.resolve().then(r.bind(r,7181))},7181:function(e,t,r){"use strict";r.d(t,{default:function(){return l}});var a=r(7437),n=r(8030);/**
+ * @license lucide-react v0.400.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */let s=(0,n.Z)("Mail",[["rect",{width:"20",height:"16",x:"2",y:"4",rx:"2",key:"18n3k1"}],["path",{d:"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7",key:"1ocrg3"}]]),o=(0,n.Z)("ArrowUpRight",[["path",{d:"M7 7h10v10",key:"1tivn9"}],["path",{d:"M7 17 17 7",key:"1vkiza"}]]),i=(0,n.Z)("Lightbulb",[["path",{d:"M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5",key:"1gvzjb"}],["path",{d:"M9 18h6",key:"x1upvd"}],["path",{d:"M10 22h4",key:"ceow96"}]]);function l(){return(0,a.jsx)("section",{id:"contact",className:"py-16 px-6 w-full",children:(0,a.jsxs)("div",{className:"max-w-3xl mx-auto text-center",children:[(0,a.jsxs)("div",{className:"flex items-center justify-center gap-3 mb-12",children:[(0,a.jsx)("span",{className:"text-blue-400 font-mono text-sm",children:"04."}),(0,a.jsx)("h2",{className:"text-3xl font-bold text-white",children:"Get In Touch"})]}),(0,a.jsx)("p",{className:"text-gray-400 text-lg leading-relaxed mb-4",children:"Have a project idea, feedback on one of my apps, or just want to say hello? I'd love to hear from you."}),(0,a.jsx)("p",{className:"text-gray-500 mb-12",children:"Drop me an email and I'll get back to you as soon as I can."}),(0,a.jsxs)("div",{className:"flex flex-col sm:flex-row items-center justify-center gap-4",children:[(0,a.jsxs)("a",{href:"mailto:carson@c2tbuilds.com",className:"inline-flex items-center gap-3 px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-xl transition-colors duration-200 group",children:[(0,a.jsx)(s,{size:20}),"Send Me an Email",(0,a.jsx)(o,{size:16,className:"group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"})]}),(0,a.jsxs)("a",{href:"mailto:carson@c2tbuilds.com?subject=App%20Suggestion&body=Hi%20Carson%2C%0A%0AI%20have%20a%20suggestion%20for%20one%20of%20your%20apps%3A%0A%0A",className:"inline-flex items-center gap-3 px-8 py-4 border border-white/10 hover:border-blue-400/50 text-gray-300 hover:text-white rounded-xl transition-all duration-200 group",children:[(0,a.jsx)(i,{size:20,className:"text-yellow-400"}),"Submit a Suggestion"]})]}),(0,a.jsx)("p",{className:"text-gray-600 text-sm mt-8",children:"carson@c2tbuilds.com"})]})})}},8030:function(e,t,r){"use strict";r.d(t,{Z:function(){return l}});var a=r(2265);/**
+ * @license lucide-react v0.400.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */let n=e=>e.replace(/([a-z0-9])([A-Z])/g,"$1-$2").toLowerCase(),s=function(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return t.filter((e,t,r)=>!!e&&r.indexOf(e)===t).join(" ")};/**
+ * @license lucide-react v0.400.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */var o={xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round"};/**
+ * @license lucide-react v0.400.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */let i=(0,a.forwardRef)((e,t)=>{let{color:r="currentColor",size:n=24,strokeWidth:i=2,absoluteStrokeWidth:l,className:c="",children:u,iconNode:d,...h}=e;return(0,a.createElement)("svg",{ref:t,...o,width:n,height:n,stroke:r,strokeWidth:l?24*Number(i)/Number(n):i,className:s("lucide",c),...h},[...d.map(e=>{let[t,r]=e;return(0,a.createElement)(t,r)}),...Array.isArray(u)?u:[u]])}),l=(e,t)=>{let r=(0,a.forwardRef)((r,o)=>{let{className:l,...c}=r;return(0,a.createElement)(i,{ref:o,iconNode:t,className:s("lucide-".concat(n(e)),l),...c})});return r.displayName="".concat(e),r}}},function(e){e.O(0,[971,23,744],function(){return e(e.s=8294)}),_N_E=e.O()}]);
