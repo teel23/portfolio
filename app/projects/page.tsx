@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Projects from '@/components/Projects'
-import Pipeline from '@/components/Pipeline'
 
 export const metadata: Metadata = {
   title: 'Projects | C2T Builds',
@@ -11,7 +10,6 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] pt-24">
       <Projects />
-      <Pipeline />
     </main>
   )
 }
