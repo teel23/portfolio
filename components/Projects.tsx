@@ -66,7 +66,7 @@ const projects: Project[] = [
     screenshotLabels: ['Dashboard', 'Workout Log'],
     description:
       'A mobile-first progressive web app for tracking workouts, body metrics, and fitness progress. Features offline support, installable on any device, workout logging across multiple categories (cardio, strength, body metrics), progress charts powered by Chart.js, and a calendar view of training history.',
-    tags: ['JavaScript', 'HTML', 'CSS', 'Chart.js', 'PWA', 'Service Worker', 'Netlify'],
+    tags: ['JavaScript', 'HTML', 'CSS', 'Chart.js', 'PWA', 'Service Worker', 'Vercel'],
     demoUrl: 'https://fittrack.c2tbuilds.com',
     codeUrl: 'https://github.com/teel23/fitness-tracker',
     beta: true,
