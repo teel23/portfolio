@@ -39,7 +39,7 @@ const projects: Project[] = [
     description:
       'A cinematic AI-powered movie & TV chat app. Tell it your mood or a film you loved — it responds like a film-obsessed friend, with picks rendered as sleek streaming cards. Built with the Claude API on the backend for real-time streaming recommendations.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Claude API', 'Streaming', 'Vercel'],
-    demoUrl: 'https://ai-mov-psi.vercel.app/',
+    demoUrl: 'https://ai-mov.c2tbuilds.com',
     beta: true,
   },
   {
