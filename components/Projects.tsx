@@ -78,7 +78,7 @@ const projects: Project[] = [
     screenshotLabels: ['Spin Wheel'],
     description:
       'A sleek decision-making spin wheel. Add up to 20 custom choices, spin to let fate decide, then keep or eliminate the result. Features vivid color-coded segments, smooth eased animation, and a clean dark UI — no login, no fluff, just spin.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Canvas', 'Netlify'],
+    tags: ['HTML', 'CSS', 'JavaScript', 'Canvas', 'Vercel'],
     demoUrl: 'https://spin.c2tbuilds.com',
     beta: true,
   },
