@@ -39,7 +39,7 @@ const projects: Project[] = [
     description:
       'A cinematic AI-powered movie & TV chat app. Tell it your mood or a film you loved — it responds like a film-obsessed friend, with picks rendered as sleek streaming cards. Built with the Claude API on the backend for real-time streaming recommendations.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Claude API', 'Streaming', 'Vercel'],
-    demoUrl: 'https://ai-mov.c2tbuilds.com',
+    demoUrl: 'https://ai-mov-psi.vercel.app/',
     beta: true,
   },
   {
@@ -69,6 +69,17 @@ const projects: Project[] = [
     tags: ['JavaScript', 'HTML', 'CSS', 'Chart.js', 'PWA', 'Service Worker', 'Vercel'],
     demoUrl: 'https://fittrack.c2tbuilds.com',
     codeUrl: 'https://github.com/teel23/fitness-tracker',
+    beta: true,
+  },
+  {
+    title: 'Spin to Decide',
+    category: 'Tool',
+    screenshots: ['/screenshots/spinwheel.png'],
+    screenshotLabels: ['Spin Wheel'],
+    description:
+      'A sleek decision-making spin wheel. Add up to 20 custom choices, spin to let fate decide, then keep or eliminate the result. Features vivid color-coded segments, smooth eased animation, and a clean dark UI — no login, no fluff, just spin.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Canvas', 'Netlify'],
+    demoUrl: 'https://spin.c2tbuilds.com',
     beta: true,
   },
 ]
