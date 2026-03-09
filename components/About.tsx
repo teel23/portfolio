@@ -33,11 +33,11 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              I&apos;m a developer focused on building web applications that are fast, functional,
-              and well-designed. I enjoy turning ideas into products that people actually use.
+              I&apos;m Carson — an accountant turned developer based in the Midwest. I build clean,
+              functional web apps and AI-powered tools under the C2T Builds brand.
             </p>
             <p className="text-gray-400 leading-relaxed mb-6">
-              My approach is simple: understand the problem first, then build the right solution.
+              Currently focused on PWAs, AI integrations, and projects that actually solve problems.
               Whether it&apos;s a side project or a production app, I bring the same level of care
               to every line of code.
             </p>

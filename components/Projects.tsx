@@ -68,7 +68,7 @@ const projects: Project[] = [
       'A mobile-first progressive web app for tracking workouts, body metrics, and fitness progress. Features offline support, installable on any device, workout logging across multiple categories (cardio, strength, body metrics), progress charts powered by Chart.js, and a calendar view of training history.',
     tags: ['JavaScript', 'HTML', 'CSS', 'Chart.js', 'PWA', 'Service Worker', 'Vercel'],
     demoUrl: 'https://fittrack.c2tbuilds.com',
-    codeUrl: 'https://github.com/teel23/fitness-tracker',
+    codeUrl: 'https://github.com/teel23/fittrack',
     beta: true,
   },
   {
@@ -79,7 +79,40 @@ const projects: Project[] = [
     description:
       'A sleek decision-making spin wheel. Add up to 20 custom choices, spin to let fate decide, then keep or eliminate the result. Features vivid color-coded segments, smooth eased animation, and a clean dark UI — no login, no fluff, just spin.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Canvas', 'Vercel'],
-    demoUrl: 'https://spin-the-wheel-puce.vercel.app',
+    demoUrl: 'https://spin.c2tbuilds.com',
+    beta: true,
+  },
+  {
+    title: 'Daily News Digest',
+    category: 'Automation',
+    screenshots: ['/screenshots/daily-news-digest.png'],
+    screenshotLabels: ['Email Digest'],
+    description:
+      'A Python/GitHub Actions pipeline that delivers a personalized morning email covering Illinois basketball, Big Ten, Timberwolves, business, politics, and AI. Pulls live headlines via NewsAPI and summarizes them using the Claude API — runs daily, zero infrastructure.',
+    tags: ['Python', 'GitHub Actions', 'NewsAPI', 'Claude API'],
+    codeUrl: 'https://github.com/teel23/daily-news-digest',
+    beta: true,
+  },
+  {
+    title: 'Mini Games',
+    category: 'Web App',
+    screenshots: ['/screenshots/mini-games.png'],
+    screenshotLabels: ['Game Hub'],
+    description:
+      'A collection of 8 browser-based mini games including 2048, Minesweeper, Wordle-style, Sudoku, Solitaire, water sort, sand fall, and tic-tac-toe. Built with Next.js and Tailwind, with leaderboards powered by Supabase.',
+    tags: ['Next.js', 'Tailwind CSS', 'Supabase', 'Vercel'],
+    codeUrl: 'https://github.com/teel23/mini-games',
+    beta: true,
+  },
+  {
+    title: 'Fantasy Football AI Bot',
+    category: 'AI App',
+    screenshots: ['/screenshots/ff-bot.png'],
+    screenshotLabels: ['AI Assistant'],
+    description:
+      'An AI-powered fantasy football assistant with a custom weighting engine, self-learning capabilities, and a fully free data stack. Analyzes matchups, suggests waiver pickups, and improves week over week. Currently in active development.',
+    tags: ['Python', 'Supabase', 'Claude API'],
+    codeUrl: 'https://github.com/teel23/fantasy-football-bot',
     beta: true,
   },
 ]
