@@ -26,8 +26,8 @@ const projects: Project[] = [
   {
     title: 'Darts Scoreboard',
     category: 'PWA',
-    screenshot: '/screenshots/darts-real.png',
-    screenshotLabel: 'Cricket',
+    screenshot: '/screenshots/golf-real.png',
+    screenshotLabel: 'Scorecard',
     description:
       'A mobile-first darts scoreboard PWA supporting four game modes: 01 Games (301/501/701), Cricket, Tic Tac Toe Darts, and Bermuda Triangle (Halve-It). Features per-player dart tracking, undo history, auto-advance after 3 darts, a live dartboard display, and installable on any device.',
     tags: ['React', 'JavaScript', 'CSS', 'PWA', 'Vercel'],
@@ -47,8 +47,8 @@ const projects: Project[] = [
   {
     title: 'Golf Scorecard',
     category: 'PWA',
-    screenshot: '/screenshots/golf-real.png',
-    screenshotLabel: 'Scorecard',
+    screenshot: '/screenshots/darts-real.png',
+    screenshotLabel: 'Cricket',
     description:
       'An offline-first golf scoring PWA with Augusta-inspired design. Manage courses with full 18-hole par data, track strokes hole-by-hole with quick preset buttons (Eagle through Double Bogey), view running totals vs par, and review complete round history with front/back 9 breakdowns — all stored locally on your device.',
     tags: ['React', 'Vite', 'Tailwind CSS', 'Dexie.js', 'PWA', 'Vercel'],
