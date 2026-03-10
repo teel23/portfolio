@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Github } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const roles = ['Developer', 'Builder', 'Problem Solver']
 
@@ -46,7 +46,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <p className="text-blue-400 text-sm font-mono tracking-widest uppercase mb-6 opacity-80">
-          Welcome to my portfolio
+          Web Apps &amp; Tools
         </p>
 
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
@@ -73,15 +73,12 @@ export default function Hero() {
             View Projects
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
           </Link>
-          <a
-            href="https://github.com/teel23"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/request-code"
             className="flex items-center gap-2 px-8 py-3 border border-white/10 hover:border-blue-400/50 text-gray-300 hover:text-white rounded-lg transition-all duration-200"
           >
-            <Github size={18} />
-            GitHub
-          </a>
+            Request Code
+          </Link>
         </div>
       </div>
     </section>

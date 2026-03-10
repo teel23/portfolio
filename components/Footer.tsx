@@ -1,4 +1,4 @@
-import { Github } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -10,15 +10,12 @@ export default function Footer() {
           © {year} C2T<span className="text-blue-400">.</span>Builds
         </span>
 
-        <a
-          href="https://github.com/teel23"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 hover:text-white transition-colors"
-          aria-label="GitHub"
+        <Link
+          href="/request-code"
+          className="text-gray-600 hover:text-white text-sm transition-colors"
         >
-          <Github size={18} />
-        </a>
+          Request Code
+        </Link>
       </div>
     </footer>
   )
