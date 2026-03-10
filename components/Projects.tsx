@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import { ExternalLink, Github, Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ExternalLink, Github, Star, ChevronLeft, ChevronRight, Download, Clock } from 'lucide-react'
 
 interface Project {
   title: string
@@ -12,24 +12,23 @@ interface Project {
   screenshots: string[]
   screenshotLabels?: string[]
   demoUrl?: string
+  installUrl?: string
   codeUrl?: string
   beta?: boolean
+  comingSoon?: boolean
 }
 
 const projects: Project[] = [
   {
     title: 'Darts Scoreboard',
     category: 'PWA',
-    screenshots: [
-      '/screenshots/darts-home.png',
-      '/screenshots/darts-game.png',
-      '/screenshots/darts-tictactoe.png',
-    ],
-    screenshotLabels: ['Home', '501 Game', 'Tic Tac Toe'],
+    screenshots: ['/screenshots/darts-game.png'],
+    screenshotLabels: ['Cricket'],
     description:
       'A mobile-first darts scoreboard PWA supporting four game modes: 01 Games (301/501/701), Cricket, Tic Tac Toe Darts, and Bermuda Triangle (Halve-It). Features per-player dart tracking, undo history, auto-advance after 3 darts, a live dartboard display, and installable on any device.',
     tags: ['React', 'JavaScript', 'CSS', 'PWA', 'Vercel'],
     demoUrl: 'https://darts.c2tbuilds.com',
+    installUrl: 'https://darts.c2tbuilds.com',
   },
   {
     title: 'AI-Mov',
@@ -49,25 +48,24 @@ const projects: Project[] = [
       '/screenshots/golf-home.png',
       '/screenshots/golf-game.png',
     ],
-    screenshotLabels: ['Dashboard', 'Scoring'],
+    screenshotLabels: ['Dashboard', 'Scorecard'],
     description:
       'An offline-first golf scoring PWA with Augusta-inspired design. Manage courses with full 18-hole par data, track strokes hole-by-hole with quick preset buttons (Eagle through Double Bogey), view running totals vs par, and review complete round history with front/back 9 breakdowns — all stored locally on your device.',
     tags: ['React', 'Vite', 'Tailwind CSS', 'Dexie.js', 'PWA', 'Vercel'],
     demoUrl: 'https://golf.c2tbuilds.com',
+    installUrl: 'https://golf.c2tbuilds.com',
     beta: true,
   },
   {
     title: 'FitTrack',
     category: 'PWA',
-    screenshots: [
-      '/screenshots/fittrack-home.png',
-      '/screenshots/fittrack-game.png',
-    ],
-    screenshotLabels: ['Dashboard', 'Workout Log'],
+    screenshots: ['/screenshots/fittrack-home.png'],
+    screenshotLabels: ['Dashboard'],
     description:
       'A mobile-first progressive web app for tracking workouts, body metrics, and fitness progress. Features offline support, installable on any device, workout logging across multiple categories (cardio, strength, body metrics), progress charts powered by Chart.js, and a calendar view of training history.',
     tags: ['JavaScript', 'HTML', 'CSS', 'Chart.js', 'PWA', 'Service Worker', 'Vercel'],
     demoUrl: 'https://fittrack.c2tbuilds.com',
+    installUrl: 'https://fittrack.c2tbuilds.com',
     codeUrl: 'https://github.com/teel23/fittrack',
     beta: true,
   },
@@ -80,6 +78,7 @@ const projects: Project[] = [
       'A sleek decision-making spin wheel. Add up to 20 custom choices, spin to let fate decide, then keep or eliminate the result. Features vivid color-coded segments, smooth eased animation, and a clean dark UI — no login, no fluff, just spin.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Canvas', 'Vercel'],
     demoUrl: 'https://spin.c2tbuilds.com',
+    installUrl: 'https://spin.c2tbuilds.com',
     beta: true,
   },
   {
@@ -91,6 +90,7 @@ const projects: Project[] = [
       'A Python/GitHub Actions pipeline that delivers a personalized morning email covering Illinois basketball, Big Ten, Timberwolves, business, politics, and AI. Pulls live headlines via NewsAPI and summarizes them using the Claude API — runs daily, zero infrastructure.',
     tags: ['Python', 'GitHub Actions', 'NewsAPI', 'Claude API'],
     codeUrl: 'https://github.com/teel23/daily-news-digest',
+    comingSoon: true,
     beta: true,
   },
   {
@@ -102,6 +102,7 @@ const projects: Project[] = [
       'A collection of 8 browser-based mini games including 2048, Minesweeper, Wordle-style, Sudoku, Solitaire, water sort, sand fall, and tic-tac-toe. Built with Next.js and Tailwind, with leaderboards powered by Supabase.',
     tags: ['Next.js', 'Tailwind CSS', 'Supabase', 'Vercel'],
     codeUrl: 'https://github.com/teel23/mini-games',
+    comingSoon: true,
     beta: true,
   },
   {
@@ -113,6 +114,7 @@ const projects: Project[] = [
       'An AI-powered fantasy football assistant with a custom weighting engine, self-learning capabilities, and a fully free data stack. Analyzes matchups, suggests waiver pickups, and improves week over week. Currently in active development.',
     tags: ['Python', 'Supabase', 'Claude API'],
     codeUrl: 'https://github.com/teel23/fantasy-football-bot',
+    comingSoon: true,
     beta: true,
   },
 ]
@@ -201,46 +203,21 @@ export default function Projects() {
               />
 
               {/* Content */}
-              <div className="flex flex-col flex-1 p-7">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono text-blue-400 bg-blue-400/10 px-2 py-1 rounded">
-                      {project.category}
+              <div className="flex flex-col flex-1 p-5 md:p-7">
+                {/* Badges — no icon links */}
+                <div className="flex items-center gap-2 mb-4 flex-wrap">
+                  <span className="text-xs font-mono text-blue-400 bg-blue-400/10 px-2 py-1 rounded">
+                    {project.category}
+                  </span>
+                  {project.beta ? (
+                    <span className="text-xs text-orange-400 bg-orange-400/10 border border-orange-400/20 px-2 py-1 rounded">
+                      BETA
                     </span>
-                    {project.beta ? (
-                      <span className="text-xs text-orange-400 bg-orange-400/10 border border-orange-400/20 px-2 py-1 rounded">
-                        BETA
-                      </span>
-                    ) : (
-                      <span className="flex items-center gap-1 text-xs text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded">
-                        <Star size={11} fill="currentColor" /> Featured
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex gap-3">
-                    {project.codeUrl && (
-                      <a
-                        href={project.codeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-500 hover:text-white transition-colors"
-                        aria-label="View code"
-                      >
-                        <Github size={18} />
-                      </a>
-                    )}
-                    {project.demoUrl && (
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-500 hover:text-blue-400 transition-colors"
-                        aria-label="View demo"
-                      >
-                        <ExternalLink size={18} />
-                      </a>
-                    )}
-                  </div>
+                  ) : (
+                    <span className="flex items-center gap-1 text-xs text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded">
+                      <Star size={11} fill="currentColor" /> Featured
+                    </span>
+                  )}
                 </div>
 
                 <h3 className="text-white font-semibold text-xl mb-3 group-hover:text-blue-400 transition-colors">
@@ -251,7 +228,7 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -262,17 +239,64 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {project.demoUrl && (
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 self-start px-5 py-2.5 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-lg transition-colors duration-200 group/btn"
-                  >
-                    <ExternalLink size={15} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" />
-                    Launch App
-                  </a>
-                )}
+                {/* Action buttons */}
+                <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 mt-auto pt-5">
+
+                  {/* Launch App — blue */}
+                  {project.demoUrl && !project.comingSoon && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                    >
+                      <ExternalLink size={15} />
+                      Launch App
+                    </a>
+                  )}
+
+                  {/* Install App — green — PWA only */}
+                  {project.installUrl && !project.comingSoon && (
+                    <a
+                      href={project.installUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                    >
+                      <Download size={15} />
+                      Install App
+                    </a>
+                  )}
+
+                  {/* View Code — gray */}
+                  {project.codeUrl && (
+                    <a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 bg-white/[0.06] hover:bg-white/[0.10] active:bg-white/[0.14] text-gray-300 hover:text-white text-sm font-medium rounded-lg border border-white/10 hover:border-white/20 transition-all duration-200"
+                    >
+                      <Github size={15} />
+                      View Code
+                    </a>
+                  )}
+
+                  {/* Coming Soon — amber */}
+                  {project.comingSoon && (
+                    <span className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 bg-amber-500/10 text-amber-400 text-sm font-medium rounded-lg border border-amber-500/20 cursor-not-allowed select-none">
+                      <Clock size={15} />
+                      Coming Soon
+                    </span>
+                  )}
+
+                  {/* Mobile PWA install hint */}
+                  {project.installUrl && !project.comingSoon && (
+                    <p className="text-[10px] text-gray-600 sm:hidden w-full text-center -mt-1">
+                      Opens in browser · tap Share → Add to Home Screen
+                    </p>
+                  )}
+
+                </div>
               </div>
             </div>
           ))}
