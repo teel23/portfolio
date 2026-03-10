@@ -15,7 +15,14 @@ interface Project {
   installUrl?: string
   codeUrl?: string
   beta?: boolean
-  comingSoon?: boolean
+}
+
+interface ComingSoonProject {
+  title: string
+  category: string
+  description: string
+  tags: string[]
+  codeUrl?: string
 }
 
 const projects: Project[] = [
@@ -81,41 +88,32 @@ const projects: Project[] = [
     installUrl: 'https://spin.c2tbuilds.com',
     beta: true,
   },
+]
+
+const comingSoonProjects: ComingSoonProject[] = [
   {
     title: 'Daily News Digest',
     category: 'Automation',
-    screenshots: ['/screenshots/daily-news-digest.png'],
-    screenshotLabels: ['Email Digest'],
     description:
-      'A Python/GitHub Actions pipeline that delivers a personalized morning email covering Illinois basketball, Big Ten, Timberwolves, business, politics, and AI. Pulls live headlines via NewsAPI and summarizes them using the Claude API — runs daily, zero infrastructure.',
+      'Morning email digest covering Illinois basketball, Big Ten, Timberwolves, business, politics, and AI — built with Python, GitHub Actions, and the Claude API. Runs daily, zero infrastructure.',
     tags: ['Python', 'GitHub Actions', 'NewsAPI', 'Claude API'],
     codeUrl: 'https://github.com/teel23/daily-news-digest',
-    comingSoon: true,
-    beta: true,
   },
   {
     title: 'Mini Games',
     category: 'Web App',
-    screenshots: ['/screenshots/mini-games.png'],
-    screenshotLabels: ['Game Hub'],
     description:
-      'A collection of 8 browser-based mini games including 2048, Minesweeper, Wordle-style, Sudoku, Solitaire, water sort, sand fall, and tic-tac-toe. Built with Next.js and Tailwind, with leaderboards powered by Supabase.',
-    tags: ['Next.js', 'Tailwind CSS', 'Supabase', 'Vercel'],
+      'A collection of 8 browser-based games — 2048, Minesweeper, Wordle-style, Sudoku, Solitaire, water sort, sand fall, and tic-tac-toe — with Supabase leaderboards.',
+    tags: ['Next.js', 'Tailwind CSS', 'Supabase'],
     codeUrl: 'https://github.com/teel23/mini-games',
-    comingSoon: true,
-    beta: true,
   },
   {
     title: 'Fantasy Football AI Bot',
     category: 'AI App',
-    screenshots: ['/screenshots/ff-bot.png'],
-    screenshotLabels: ['AI Assistant'],
     description:
-      'An AI-powered fantasy football assistant with a custom weighting engine, self-learning capabilities, and a fully free data stack. Analyzes matchups, suggests waiver pickups, and improves week over week. Currently in active development.',
+      'AI-powered fantasy football assistant with a custom weighting engine, self-learning capabilities, and a free data stack. Analyzes matchups and suggests waiver pickups week over week.',
     tags: ['Python', 'Supabase', 'Claude API'],
     codeUrl: 'https://github.com/teel23/fantasy-football-bot',
-    comingSoon: true,
-    beta: true,
   },
 ]
 
@@ -126,7 +124,6 @@ function ScreenshotCarousel({ screenshots, labels, title }: { screenshots: strin
 
   return (
     <div className="relative md:w-52 md:flex-shrink-0 bg-black/40 flex flex-col overflow-hidden">
-      {/* Image */}
       <div className="relative flex-1">
         <Image
           src={screenshots[idx]}
@@ -135,7 +132,6 @@ function ScreenshotCarousel({ screenshots, labels, title }: { screenshots: strin
           height={844}
           className="w-full md:w-52 h-56 md:h-full object-cover object-top transition-opacity duration-300"
         />
-        {/* Label pill */}
         {labels && (
           <span className="absolute top-2 left-1/2 -translate-x-1/2 text-[10px] font-mono bg-black/60 text-blue-300 px-2 py-0.5 rounded-full whitespace-nowrap backdrop-blur-sm">
             {labels[idx]}
@@ -143,7 +139,6 @@ function ScreenshotCarousel({ screenshots, labels, title }: { screenshots: strin
         )}
       </div>
 
-      {/* Nav arrows — only if multiple */}
       {screenshots.length > 1 && (
         <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-1 pointer-events-none">
           <button
@@ -163,7 +158,6 @@ function ScreenshotCarousel({ screenshots, labels, title }: { screenshots: strin
         </div>
       )}
 
-      {/* Dot indicators */}
       {screenshots.length > 1 && (
         <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
           {screenshots.map((_, i) => (
@@ -183,6 +177,8 @@ export default function Projects() {
   return (
     <section id="projects" className="py-16 px-6">
       <div className="max-w-5xl mx-auto">
+
+        {/* ── Live Projects ─────────────────────────────────── */}
         <div className="flex items-center gap-3 mb-12">
           <span className="text-blue-400 font-mono text-sm">02.</span>
           <h2 className="text-3xl font-bold text-white">Projects</h2>
@@ -195,16 +191,13 @@ export default function Projects() {
               key={project.title}
               className="group flex flex-col md:flex-row gap-0 rounded-2xl bg-white/[0.03] border border-blue-400/20 hover:border-blue-400/40 transition-all duration-300 overflow-hidden"
             >
-              {/* Screenshot carousel */}
               <ScreenshotCarousel
                 screenshots={project.screenshots}
                 labels={project.screenshotLabels}
                 title={project.title}
               />
 
-              {/* Content */}
               <div className="flex flex-col flex-1 p-5 md:p-7">
-                {/* Badges — no icon links */}
                 <div className="flex items-center gap-2 mb-4 flex-wrap">
                   <span className="text-xs font-mono text-blue-400 bg-blue-400/10 px-2 py-1 rounded">
                     {project.category}
@@ -239,11 +232,8 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Action buttons */}
                 <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 mt-auto pt-5">
-
-                  {/* Launch App — blue */}
-                  {project.demoUrl && !project.comingSoon && (
+                  {project.demoUrl && (
                     <a
                       href={project.demoUrl}
                       target="_blank"
@@ -255,8 +245,7 @@ export default function Projects() {
                     </a>
                   )}
 
-                  {/* Install App — green — PWA only */}
-                  {project.installUrl && !project.comingSoon && (
+                  {project.installUrl && (
                     <a
                       href={project.installUrl}
                       target="_blank"
@@ -268,7 +257,6 @@ export default function Projects() {
                     </a>
                   )}
 
-                  {/* View Code — gray */}
                   {project.codeUrl && (
                     <a
                       href={project.codeUrl}
@@ -281,26 +269,74 @@ export default function Projects() {
                     </a>
                   )}
 
-                  {/* Coming Soon — amber */}
-                  {project.comingSoon && (
-                    <span className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 bg-amber-500/10 text-amber-400 text-sm font-medium rounded-lg border border-amber-500/20 cursor-not-allowed select-none">
-                      <Clock size={15} />
-                      Coming Soon
-                    </span>
-                  )}
-
-                  {/* Mobile PWA install hint */}
-                  {project.installUrl && !project.comingSoon && (
+                  {project.installUrl && (
                     <p className="text-[10px] text-gray-600 sm:hidden w-full text-center -mt-1">
                       Opens in browser · tap Share → Add to Home Screen
                     </p>
                   )}
-
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* ── Coming Soon ───────────────────────────────────── */}
+        <div className="flex items-center gap-3 mt-20 mb-8">
+          <span className="text-amber-400/60 font-mono text-sm">03.</span>
+          <h2 className="text-xl font-bold text-white/60">Coming Soon</h2>
+          <div className="flex-1 h-px bg-white/5 ml-4" />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {comingSoonProjects.map((project) => (
+            <div
+              key={project.title}
+              className="flex flex-col gap-3 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-amber-400/20 transition-colors duration-300 p-5"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono text-amber-400/70 bg-amber-400/10 px-2 py-1 rounded">
+                  {project.category}
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-[11px] text-amber-400/60 font-medium">
+                  <Clock size={11} />
+                  In progress
+                </span>
+              </div>
+
+              <h3 className="text-white/80 font-semibold text-base">
+                {project.title}
+              </h3>
+
+              <p className="text-gray-500 text-xs leading-relaxed flex-1">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-1.5">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[11px] text-gray-600 bg-white/[0.04] px-2 py-0.5 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {project.codeUrl && (
+                <a
+                  href={project.codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full px-4 py-2 bg-white/[0.04] hover:bg-white/[0.08] text-gray-500 hover:text-gray-300 text-xs font-medium rounded-lg border border-white/[0.06] hover:border-white/10 transition-all duration-200 mt-auto"
+                >
+                  <Github size={13} />
+                  View Code
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   )
