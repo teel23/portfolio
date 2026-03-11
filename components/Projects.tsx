@@ -73,6 +73,15 @@ const projects: Project[] = [
     demoUrl: 'https://spin.c2tbuilds.com',
     beta: true,
   },
+  {
+    title: 'Mini Games',
+    category: 'Web App',
+    description:
+      'A collection of 8 browser-based mini games — Tic-Tac-Toe (minimax AI), 2048, Wordle, Minesweeper, Sudoku, Block Blast, Water Sort, and Solitaire. Dark mode only, phone-first, no accounts. All scores and streaks saved locally — just play.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    demoUrl: 'https://games.c2tbuilds.com',
+    beta: true,
+  },
 ]
 
 const comingSoonProjects: ComingSoonProject[] = [
@@ -82,13 +91,6 @@ const comingSoonProjects: ComingSoonProject[] = [
     description:
       'Morning email digest covering Illinois basketball, Big Ten, Timberwolves, business, politics, and AI — built with Python, GitHub Actions, and the Claude API. Runs daily, zero infrastructure.',
     tags: ['Python', 'GitHub Actions', 'NewsAPI', 'Claude API'],
-  },
-  {
-    title: 'Mini Games',
-    category: 'Web App',
-    description:
-      'A collection of 8 browser-based games — 2048, Minesweeper, Wordle-style, Sudoku, Solitaire, water sort, sand fall, and tic-tac-toe — with Supabase leaderboards.',
-    tags: ['Next.js', 'Tailwind CSS', 'Supabase'],
   },
   {
     title: 'Fantasy Football AI Bot',
