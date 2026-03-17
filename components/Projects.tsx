@@ -77,9 +77,11 @@ const projects: Project[] = [
     title: 'Mini Games',
     category: 'Web App',
     description:
-      'A collection of 8 browser-based mini games — Tic-Tac-Toe (minimax AI), 2048, Wordle, Minesweeper, Sudoku, Block Blast, Water Sort, and Solitaire. Dark mode only, phone-first, no accounts. All scores and streaks saved locally — just play.',
+      'A collection of 13 browser-based mini games — including Chess, Checkers, Battleship, Solitaire, Wordle, Minesweeper, Sudoku, and more. Phone-first, no accounts. All scores saved locally — just play.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     demoUrl: 'https://games.c2tbuilds.com',
+    screenshot: '/screenshots/mini-games-real.png',
+    screenshotLabel: 'Home',
     beta: true,
   },
 ]
