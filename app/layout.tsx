@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     title: 'C2T Builds | Developer Portfolio',
     description: 'Developer portfolio showcasing web applications and projects.',
     type: 'website',
+    url: 'https://c2tbuilds.com',
+    images: [
+      {
+        url: 'https://c2tbuilds.com/screenshots/darts-real.png',
+        width: 1170,
+        height: 2532,
+        alt: 'C2T Builds — Developer Portfolio',
+      },
+    ],
   },
 }
 
